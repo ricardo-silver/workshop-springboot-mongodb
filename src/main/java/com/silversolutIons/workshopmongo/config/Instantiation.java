@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.silversolutIons.workshopmongo.domain.Post;
 import com.silversolutIons.workshopmongo.domain.User;
+import com.silversolutIons.workshopmongo.dto.AuthorDTO;
 import com.silversolutIons.workshopmongo.repository.PostRepository;
 import com.silversolutIons.workshopmongo.repository.UserRepository;
 
@@ -36,10 +37,11 @@ public class Instantiation implements CommandLineRunner {
 		User alex= new User(null, "Alex Green", "alex@gmail.com");
 		User bob= new User(null, "BobGrey", "bob@gmail.com");
 		
-		Post post1 = new Post(null,(java.util.Date) sdf.parse("21/03/2018"),"Partiu viagem","Vou voajar para São paulo. Abraços!", maria);
-		Post post2 = new Post(null, (java.util.Date) sdf.parse("23/03/2018"),"Bom Dia!","Acordei feliz hoje!", maria);
-		
 		userRepository.saveAll(Arrays.asList(maria,alex,bob));
+				
+		Post post1 = new Post(null,(java.util.Date) sdf.parse("21/03/2018"),"Partiu viagem","Vou voajar para São paulo. Abraços!", new AuthorDTO(maria));
+		Post post2 = new Post(null, (java.util.Date) sdf.parse("23/03/2018"),"Bom Dia!","Acordei feliz hoje!", new AuthorDTO(maria));
+		
 		postRepository.saveAll(Arrays.asList(post1,post2));
 		
 	}
