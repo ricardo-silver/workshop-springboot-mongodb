@@ -6,7 +6,6 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.silversolutIons.workshopmongo.dto.AuthorDTO;
 
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class CommentDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
