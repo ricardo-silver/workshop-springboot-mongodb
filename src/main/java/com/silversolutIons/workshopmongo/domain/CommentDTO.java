@@ -6,8 +6,9 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.silversolutIons.workshopmongo.dto.AuthorDTO;
 
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class CommentDTO implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	
 	private String text;
@@ -25,5 +26,29 @@ public class CommentDTO implements Serializable {
 		this.author = author;
 	}
 	
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public AuthorDTO getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(AuthorDTO author) {
+		this.author = author;
+	}
+
 
 }
