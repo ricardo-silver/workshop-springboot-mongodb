@@ -7,9 +7,11 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.silversolutIons.workshopmongo.dto.AuthorDTO;
 
 @Document
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Post implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
